@@ -15,7 +15,6 @@ import '../styles/app.scss';
 
 @observer class App extends React.Component {
 
-
   render() {
     return (
 			<Router history={history}>

@@ -1,10 +1,14 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import {observer, inject} from 'mobx-react';
 import {Link} from 'react-router-dom';
 
 @inject('store')
 @observer
 export default class HomePage extends React.Component {
+  static propTypes = {
+    store: PropTypes.object
+  }
 
   constructor(props) {
     super(props);
