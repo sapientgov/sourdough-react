@@ -21,6 +21,10 @@ export default class HomePage extends React.Component {
     console.log('weather: ', this.weatherStore.currentWeather);
   }
 
+  componentWillUnmount() {
+    this.weatherStore.resetPage();
+  }
+
   renderIsLoading = () => {
     return (
       <h1>Loading...</h1>
