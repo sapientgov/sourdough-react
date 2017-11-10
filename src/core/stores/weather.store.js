@@ -34,11 +34,11 @@ class WeatherStore {
 
   @action resetPage() {
     this.currentWeather = {};
-    this.isLoading = false;
+    this.isLoading = true;
   }
 
   @observable currentWeather = {};
-  @observable isLoading = false;
+  @observable isLoading = true;
 }
 
 export const weatherStore = new WeatherStore();
