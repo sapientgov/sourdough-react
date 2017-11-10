@@ -14,6 +14,7 @@ class WeatherStore {
         const success = (res) => {
           console.log('res', res.data);
           this.currentWeather = res.data;
+          this.iconCode = res.data.weather[0].icon;
           this.isLoading = false;
         }
 
@@ -38,6 +39,7 @@ class WeatherStore {
   }
 
   @observable currentWeather = {};
+  @observable iconCode = 'xxx';
   @observable isLoading = false;
 }
 
