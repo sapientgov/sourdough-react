@@ -1,0 +1,21 @@
+build
+build/
+node_modules
+node_modules/
+coverage
+coverage/
+.idea
+.idea/
+.idea/*
+
+#coverage and snapshot folders from jest
+coverage
+coverage/
+coverage/*
+jest/
+jest/*
+
+#Strange settings files
+.vscode/
+/.project
+/.settings/
