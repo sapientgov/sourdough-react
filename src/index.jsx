@@ -8,6 +8,8 @@ import {masterStore} from './core/stores/master.store.js';
 
 import ErrorPage from './pages/error-page';
 import HomePage from './pages/home-page';
+import SettingsPage from './pages/settings-page';
+import ConfigureAlarmPage from './pages/configure-alarm-page';
 
 import '../styles/app.scss';
 
@@ -20,6 +22,8 @@ import '../styles/app.scss';
           <main id="main-content">
             <Switch>
               <Route exact path="/" component={HomePage} />
+              <Route path="/settings" component={SettingsPage} />
+              <Route path="/alarm" component={ConfigureAlarmPage} />
               <Route exact path="/error/404" component={ErrorPage} />
               <Route path="*" render={() => (
 								<Redirect to="/error/404" />
