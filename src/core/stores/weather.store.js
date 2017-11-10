@@ -35,12 +35,12 @@ class WeatherStore {
 
   @action resetPage() {
     this.currentWeather = {};
-    this.isLoading = false;
+    this.isLoading = true;
   }
 
   @observable currentWeather = {};
   @observable iconCode = 'xxx';
-  @observable isLoading = false;
+  @observable isLoading = true;
 }
 
 export const weatherStore = new WeatherStore();
