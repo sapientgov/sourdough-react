@@ -6,6 +6,9 @@ import {Link} from 'react-router-dom';
 @inject('store')
 @observer
 export default class HomePage extends React.Component {
+  static propTypes = {
+    store: PropTypes.object
+  }
 
   static propTypes = {
     store: PropTypes.object

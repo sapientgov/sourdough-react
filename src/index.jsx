@@ -19,7 +19,7 @@ import '../styles/app.scss';
     return (
 			<Router history={history}>
 				<Provider store={masterStore}>
-          <main id="main-content">
+          <main id="main-content" className={`code-${masterStore.weatherStore.iconCode}`}>
             <Switch>
               <Route exact path="/" component={HomePage} />
               <Route path="/settings" component={SettingsPage} />
@@ -35,9 +35,6 @@ import '../styles/app.scss';
     )
   }
 }
-
-
-
 
 ReactDOM.render(<AppContainer><App /></AppContainer>, document.getElementById('app'));
 
