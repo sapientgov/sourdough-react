@@ -1,12 +1,14 @@
-import 'axios' from axios;
+import axios from 'axios';
 
-const openWeatherBase = 'http://samples.openweathermap.org/data/2.5/weather';
+const openWeatherBase = 'https://api.openweathermap.org/data/2.5/weather';
+
+const key = '2a7287058d9b4af3f07a96bec5652e03';
 
 class ApiService {
-  
+
   getCurrentWeatherByGeolocation(latitude, longitude) {
-    return axios.get(`${openWeatherBase}?lat=${latitude}&lon=${longitude}`);
+    return axios.get(`${openWeatherBase}?lat=${latitude}&lon=${longitude}&APPID=${key}`);
   }
 }
 
-export default const apiService = new ApiService();
+export const apiService = new ApiService();
