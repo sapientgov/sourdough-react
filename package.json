@@ -1,0 +1,15 @@
+{
+  "name": "Brella",
+  "version": "1.0.0",
+  "description": "Sapient Hackathon - Team SourDoh! app submission",
+  "main": "index.jsx",
+  "scripts": {
+    "copyassets": "copyfiles ./apple-touch-icon.png ./images/**/*  ./build/",
+    "build": "rm -rf build & npm run copyassets & webpack -p",
+    "start": "npm run copyassets & webpack-dev-server --hot --open --env=dev --progress",
+    "test": "jest --coverage"
+  },
+  "license": "ISC",
+  "dependencies": {
+  }
+}
