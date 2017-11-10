@@ -7,7 +7,7 @@ const key = '2a7287058d9b4af3f07a96bec5652e03';
 class ApiService {
 
   getCurrentWeatherByGeolocation(latitude, longitude) {
-    return axios.get(`${openWeatherBase}?lat=${latitude}&lon=${longitude}&APPID=${key}`);
+    return axios.get(`${openWeatherBase}?lat=${latitude}&lon=${longitude}&units=imperial&APPID=${key}`);
   }
 }
 
