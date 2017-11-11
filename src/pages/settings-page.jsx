@@ -24,7 +24,7 @@ export default class SettingsPage extends React.Component {
     this.userStore.checkUser();
     if (this.userStore.isReturningUser) {
       const cookie = JSON.parse(cookieService.getCookie('_brella'));
-      this.settingsStore.populateFormFields(cookie.settings);
+      this.settingsStore.populateFields(cookie.settings);
     }
   }
 
