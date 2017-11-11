@@ -14,8 +14,9 @@ class WeatherStore {
       this.isLoading = false;
     }
 
-    const fail = (res) => {
-      console.log('FAIL!!', res);
+    const fail = () => {
+      console.log('Search failed! Will default to geolocation');
+      this.fetchCurrentWeatherByGeolocation();
     }
 
     return apiService.getCurrentWeatherByString(string).then(success, fail);
@@ -24,7 +25,6 @@ class WeatherStore {
   @action fetchCurrentWeatherByGeolocation() {
     this.isLoading = true;
     if (navigator.geolocation) {
-      console.log('ding!');
       return navigator.geolocation.getCurrentPosition((position) => {
         const success = (res) => {
           this.currentWeather = res.data;
