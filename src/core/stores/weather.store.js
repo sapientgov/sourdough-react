@@ -102,7 +102,7 @@ class WeatherStore {
   @observable displayLocation = '';
   @observable tempHi = '';
   @observable tempLo = '';
-  @observable clothingPhrase = 'Sleeves';
+  @observable clothingPhrase = '';
   @observable isLoading = true;
 }
 
