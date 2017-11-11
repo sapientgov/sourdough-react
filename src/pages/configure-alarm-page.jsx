@@ -23,10 +23,14 @@ export default class ConfigureAlarmPage extends React.Component {
 
   componentWillMount() {
     this.userStore.checkUser();
-    // if (this.userStore.isReturningUser) {
-    //   const cookie = JSON.parse(cookieService.getCookie('_brella'));
-    //   this.settingsStore.populateFields(cookie.settings);
-    // }
+    if (this.userStore.isReturningUser) {
+      const cookie = JSON.parse(cookieService.getCookie('_brella'));
+      this.alarmStore.populateFields(cookie);
+    }
+  }
+
+  componentWillUnmount() {
+    this.alarmStore.resetAlarm();
   }
 
   handleOnChange = (newValue, id) => {
@@ -83,6 +87,40 @@ export default class ConfigureAlarmPage extends React.Component {
     )
   }
 
+  handleAmPmOnChange = (e) => {
+    this.alarmStore.toggleAmPm();
+  }
+
+  renderAmPm = () => {
+    return (
+      <div className="am-pm-wrapper">
+        <fieldset className="form-group">
+          <label htmlFor="time-am">
+            <input
+              type="radio"
+              id="time-am"
+              value="timeIsAm"
+              onChange={this.handleAmPmOnChange}
+              checked={!this.alarmStore.timeIsPm}/>
+              AM
+          </label>
+          <label htmlFor="time-pm">
+            <input
+              type="radio"
+              id="time-pm"
+              value="timeIspm"
+              onChange={this.handleAmPmOnChange}
+              checked={this.alarmStore.timeIsPm}/>
+              PM
+          </label>
+        </fieldset>
+      </div>
+    )
+  }
+
+  saveAlarm = () => {
+    this.alarmStore.saveAlarm();
+  }
 
   render() {
     return(
@@ -90,8 +128,9 @@ export default class ConfigureAlarmPage extends React.Component {
         <h1>Alarm</h1>
         <h2>Time</h2>
           {this.renderTimeSettings()}
-        <h2>Recurring?</h2>
+          {this.renderAmPm()}
         <div><Link to="/">Home</Link></div>
+        <div><Link to="/" onClick={this.saveAlarm}>Done</Link></div>
       </div>
     )
   }

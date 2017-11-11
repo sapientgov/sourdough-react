@@ -7,7 +7,6 @@ class SettingsStore {
 
   @action populateFields(settingsObject) {
     this.settingsObject = settingsObject;
-    console.log('populateFormFields settingsObject', settingsObject, this.settingsObject);
   }
 
   @action saveSettings() {

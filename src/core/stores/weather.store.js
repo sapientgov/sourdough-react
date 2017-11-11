@@ -12,11 +12,12 @@ class WeatherStore {
       console.log('weather: ', this.currentWeather);
       this.iconCode = res.data.weather[0].icon;
       this.isLoading = false;
+      return res.data;
     }
 
     const fail = () => {
       console.log('Search failed! Will default to geolocation');
-      this.fetchCurrentWeatherByGeolocation();
+      return this.fetchCurrentWeatherByGeolocation();
     }
 
     return apiService.getCurrentWeatherByString(string).then(success, fail);
@@ -30,6 +31,7 @@ class WeatherStore {
           this.currentWeather = res.data;
           this.conditionRes(res.data);
           this.isLoading = false;
+          return res.data;
         }
 
         const fail = (res) => {

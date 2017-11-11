@@ -1,6 +1,7 @@
 import {action, observable} from 'mobx';
 
 import {cookieService} from '../services/cookie.service';
+import {weatherStore} from './weather.store';
 
 class UserStore {
 
@@ -27,8 +28,18 @@ class UserStore {
 
   @action getReturnUser() {
     this.currentUser = JSON.parse(cookieService.getCookie('_brella'));
+    console.log('this.currentUser', this.currentUser);
     this.isReturningUser = this.currentUser.isReturningUser;
-    console.log('currentUser', this.currentUser);
+    // const searchString = this.currentUser.settings.locationInput || '';
+    // weatherStore.fetchCurrentWeatherByString('')
+    // .then(res => {
+    //   console.log('res', res);
+    //   this.currentUser.geolocation = {
+    //     lat: res.coord.lat,
+    //     lon: res.coord.lon
+    //   }
+    //   cookieService.setCookie('_brella', JSON.stringify(this.currentUser));
+    // });
   }
 
   @observable isReturningUser = false;
