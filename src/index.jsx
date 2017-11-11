@@ -36,7 +36,7 @@ class App extends React.Component {
     return (
 			<Router history={history}>
 				<Provider store={masterStore}>
-          <main id="main-content">
+          <main id="main-content" className={`code-${masterStore.weatherStore.iconCode}`}>
             <Switch>
               <Route exact path="/" component={this.getLandingPage()} />
               <Route path="/settings" component={SettingsPage} />
@@ -52,9 +52,6 @@ class App extends React.Component {
     )
   }
 }
-
-
-
 
 ReactDOM.render(<AppContainer><App /></AppContainer>, document.getElementById('app'));
 
