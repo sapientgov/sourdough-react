@@ -29,6 +29,7 @@ class UserStore {
       }
       cookieService.setCookie('_brella', JSON.stringify(initialCookie));
     })
+    this.notReturningUser();
   }
 
   @action notReturningUser() {
