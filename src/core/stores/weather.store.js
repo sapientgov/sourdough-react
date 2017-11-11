@@ -60,6 +60,7 @@ class WeatherStore {
     this.iconCode = resData.weather[0].icon;
     this.displayTemp = parseInt(resData.main.temp);
     this.displayLocation = resData.name;
+    this.coords = resData.coord;
   }
 
   @action resetPage() {
@@ -68,6 +69,7 @@ class WeatherStore {
   }
 
   @observable currentWeather = {};
+  @observable coords = {};
   @observable iconCode = 'xxx';
   @observable displayTemp = '--';
   @observable displayLocation = '';

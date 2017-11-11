@@ -13,6 +13,14 @@ class ApiService {
   getCurrentWeatherByString(string) {
     return axios.get(`${openWeatherBase}?q=${string}&units=imperial&APPID=${key}`);
   }
+
+  sendServiceWorkerSubscriptionData(data) {
+    return axios({
+      method: 'post',
+      url: 'https://34.235.79.153/api/subscriptions',
+      data: data
+    });
+  }
 }
 
 export const apiService = new ApiService();

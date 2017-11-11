@@ -22,6 +22,7 @@ export default class ConfigureAlarmPage extends React.Component {
   }
 
   componentWillMount() {
+    this.alarmStore.registerServiceWorker();
     this.userStore.checkUser();
     if (this.userStore.isReturningUser) {
       const cookie = JSON.parse(cookieService.getCookie('_brella'));
