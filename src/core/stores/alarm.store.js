@@ -9,7 +9,6 @@ class AlarmStore {
 
   @action registerServiceWorker() {
     const publicKey = new Uint8Array([0x04,0x93,0x66,0xcb,0xf8,0x21,0xe4,0x43,0xf5,0xc3,0x2c,0x67,0xd2,0x8c,0xee,0xae,0x92,0x5f,0xc1,0xdd,0x72,0xa6,0xa0,0x5b,0xde,0xb2,0x56,0xc3,0x80,0xb8,0x12,0x71,0x63,0x68,0xf3,0xf9,0x4c,0x30,0x93,0xd1,0xc8,0xe0,0xd5,0x1f,0xcd,0x1c,0xe9,0x07,0xd2,0xae,0x95,0x68,0x78,0x7d,0x92,0x0e,0xa2,0xc3,0xe9,0x02,0x80,0xdf,0xb0,0xcd,0x6e]);
-    console.log('PUBLICKEY', publicKey);
     if ('serviceWorker' in navigator) {
       // register a serviceWorker
       navigator.serviceWorker.register('js/service-worker.js')
@@ -41,7 +40,7 @@ class AlarmStore {
              }
 
              console.log(JSON.stringify(subscription));
-
+             this.subscriptionData = subscription;
              // construct an HTTP request
             var xhr = new XMLHttpRequest();
             xhr.open('POST', '/subscriptions', true);
@@ -85,15 +84,12 @@ class AlarmStore {
   }
 
   @action sendAlarmToServiceWorker() {
-    let data = {
-      coord: {
-        lat: weatherStore.coords.lat.toString(),
-        lon: weatherStore.coords.lon.toString()
-      },
-      hour: this.alarmObject.selectHour,
-      minute: this.alarmObject.selectMinute
-    }
-    console.log('DATA', data);
+    this.subscriptionData.coord = {
+      lat: weatherStore.coords.lat.toString(),
+      lon: weatherStore.coords.lon.toString()
+    };
+    this.subscriptionData.hour = this.alarmObject.selectHour;
+    this.subscriptionData.minute = this.alarmObject.selectMinute;
     const success = (res) => {
       console.log('success', res);
     }
@@ -102,14 +98,16 @@ class AlarmStore {
       console.log('fail', res);
     }
 
-    return apiService.sendServiceWorkerSubscriptionData(data).then(success, fail);
+    return apiService.sendServiceWorkerSubscriptionData(this.subscriptionData).then(success, fail);
   }
 
   @action resetAlarm() {
     this.alarmObject = Object.assign({}, this.alarmDefaults);
     this.timeIsPm = false;
+    this.subscriptionData = {};
   }
 
+  @observable subscriptionData = {};
   @observable timeIsPm = false;
   @observable alarmDefaults = {
     selectHour: '07',
