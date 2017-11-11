@@ -2,7 +2,7 @@ import axios from 'axios';
 
 const openWeatherBase = 'https://api.openweathermap.org/data/2.5/weather';
 
-const key = '2a7287058d9b4af3f07a96bec5652e03';
+const key = 'cccc0acf70ee5b8988645290e99073bc';
 
 class ApiService {
 

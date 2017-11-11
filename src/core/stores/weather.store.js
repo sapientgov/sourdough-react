@@ -10,7 +10,7 @@ class WeatherStore {
     const success = (res) => {
       this.currentWeather = res.data;
       console.log('weather: ', this.currentWeather);
-      this.iconCode = res.data.weather[0].icon;
+      this.conditionRes(res.data);
       this.isLoading = false;
       return res.data;
     }
@@ -45,6 +45,14 @@ class WeatherStore {
       });
     } else {
       console.warn('Geolocation is not supported by this browser.');
+    }
+  }
+
+  @action updateUserWeather(user) {
+    if (user.settings && user.settings.locationInput) {
+      this.fetchCurrentWeatherByString(user.settings.locationInput);
+    } else {
+      this.fetchCurrentWeatherByGeolocation();
     }
   }
 

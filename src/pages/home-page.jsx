@@ -1,9 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {observer, inject} from 'mobx-react';
-import {Link} from 'react-router-dom';
-
-import WeatherIconBlock from '../components/weather-icon-block/weather-icon-block';
 
 @inject('store')
 @observer
@@ -23,11 +20,11 @@ export default class HomePage extends React.Component {
   }
 
   componentDidMount() {
-    if (this.userStore.currentUser.settings.locationInput) {
-      this.weatherStore.fetchCurrentWeatherByString(this.userStore.currentUser.settings.locationInput);
-    } else {
-      this.weatherStore.fetchCurrentWeatherByGeolocation()
-    }
+    // if (this.userStore.currentUser.settings.locationInput) {
+    //   this.weatherStore.fetchCurrentWeatherByString(this.userStore.currentUser.settings.locationInput);
+    // } else {
+    //   this.weatherStore.fetchCurrentWeatherByGeolocation();
+    // }
   }
 
   componentWillUnmount() {
@@ -54,13 +51,16 @@ export default class HomePage extends React.Component {
   }
 
   renderMainElements = () => {
+    console.log('WHHHYYYYYY', this.weatherStore.displayTemp);
     return (
-      <div className="welcomeCard">
-        {this.renderWelcomeMsg()}
-        <WeatherIconBlock
-          temp={this.weatherStore.displayTemp}
-          location={this.weatherStore.displayLocation} />
-        <div><Link to="/settings" className="bottomLink">Get Started</Link></div>
+      <div className="returningVisitorCard">
+        <div className="avatar" aria-hidden="true"></div>
+        <div className="bottomCard">
+          <div className="clothingMsg">Sleeves</div>
+          <h1>{this.weatherStore.displayTemp}<span className="degIcon">&deg;</span></h1>
+          <h2>{this.weatherStore.displayLocation}</h2>
+          <div className="hiLow">H 72&deg; &nbsp; L 45&deg;</div>
+        </div>
       </div>
     )
   }
