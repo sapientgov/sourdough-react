@@ -276,10 +276,14 @@ a.bottomLink {
     &.code-11d,
     &.code-11n {
       background: url('/images/rain-avatar.png');
+      background-size: contain;
+      background-repeat: no-repeat;
     }
     &.code-13n,
     &.code-13d{
       background: url('/images/sweater-avatar.png');
+      background-repeat: no-repeat;
+      background-size: contain;
     }
 
   }
