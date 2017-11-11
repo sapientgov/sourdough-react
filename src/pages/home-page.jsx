@@ -33,7 +33,7 @@ export default class HomePage extends React.Component {
 
   renderIsLoading = () => {
     return (
-      <h1>Loading Home Page...</h1>
+      <h1 className="loadingMsg">Loading Home Page...</h1>
     )
   }
 
@@ -58,7 +58,7 @@ export default class HomePage extends React.Component {
           <div className="clothingMsg">Sleeves</div>
           <h1>{this.weatherStore.displayTemp}<span className="degIcon">&deg;</span></h1>
           <h2>{this.weatherStore.displayLocation}</h2>
-          <div className="hiLow">H 72&deg; &nbsp; L 45&deg;</div>
+          <div className="hiLow">H {this.weatherStore.tempHi}&deg; &nbsp; L {this.weatherStore.tempLo}&deg;</div>
         </div>
       </div>
     )

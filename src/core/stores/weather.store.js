@@ -61,6 +61,8 @@ class WeatherStore {
     this.displayTemp = parseInt(resData.main.temp);
     this.displayLocation = resData.name;
     this.coords = resData.coord;
+    this.tempHi = parseInt(resData.main.temp_max);
+    this.tempLo = parseInt(resData.main.temp_min);
   }
 
   @action resetPage() {
@@ -73,6 +75,8 @@ class WeatherStore {
   @observable iconCode = 'xxx';
   @observable displayTemp = '--';
   @observable displayLocation = '';
+  @observable tempHi = '';
+  @observable tempLo = '';
   @observable isLoading = true;
 }
 
