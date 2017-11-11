@@ -28,8 +28,7 @@ class WeatherStore {
       return navigator.geolocation.getCurrentPosition((position) => {
         const success = (res) => {
           this.currentWeather = res.data;
-          console.log('weather: ', this.currentWeather);
-          this.iconCode = res.data.weather[0].icon;
+          this.conditionRes(res.data);
           this.isLoading = false;
         }
 
@@ -47,6 +46,11 @@ class WeatherStore {
     }
   }
 
+  @action conditionRes(resData) {
+    this.iconCode = resData.weather[0].icon;
+    this.displayTemp = parseInt(resData.main.temp);
+    this.displayLocation = resData.name;
+  }
 
   @action resetPage() {
     this.currentWeather = {};
@@ -55,6 +59,8 @@ class WeatherStore {
 
   @observable currentWeather = {};
   @observable iconCode = 'xxx';
+  @observable displayTemp = '--';
+  @observable displayLocation = '';
   @observable isLoading = true;
 }
 

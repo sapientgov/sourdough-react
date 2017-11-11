@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="542px" height="542px" viewBox="0 0 542 542" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47.1 (45422) - http://www.bohemiancoding.com/sketch -->
+    <title>v copy 6</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="87.9868739%" y1="7.18616202%" x2="26.0449372%" y2="108.277387%" id="linearGradient-1">
+            <stop stop-color="#3023AE" offset="0%"></stop>
+            <stop stop-color="#3426AB" offset="3.15627869%"></stop>
+            <stop stop-color="#988B51" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="100%" x2="50%" y2="0%" id="linearGradient-2">
+            <stop stop-color="#030000" stop-opacity="0.6" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" stop-opacity="0.6" offset="100%"></stop>
+        </linearGradient>
+        <path d="M139.666667,329.44401 C61.4288782,322.770282 0,256.843614 0,176.5 C0,91.7242909 68.3931682,23 152.760417,23 C210.802797,23 261.284538,55.527668 287.136822,103.431548 C293.120602,102.45208 299.261537,101.942857 305.520833,101.942857 C368.193647,101.942857 419,152.995188 419,215.971429 C419,272.981962 377.363447,320.220675 322.979167,328.65888 L322.979167,330 L139.666667,330 L139.666667,329.44401 Z" id="path-3"></path>
+        <filter x="-16.7%" y="-16.3%" width="133.4%" height="145.6%" filterUnits="objectBoundingBox" id="filter-4">
+            <feOffset dx="0" dy="20" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="20" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0.607892215   0 0 0 0 0.607803345   0 0 0 0 0.607922554  0 0 0 1 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <linearGradient x1="87.9868739%" y1="7.18616202%" x2="26.0449372%" y2="108.277387%" id="linearGradient-5">
+            <stop stop-color="#3023AE" offset="0%"></stop>
+            <stop stop-color="#988B51" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-6">
+            <stop stop-color="#FCF1A6" offset="0%"></stop>
+            <stop stop-color="#F7DE6D" offset="100%"></stop>
+        </linearGradient>
+        <polygon id="path-7" points="334.445339 420.902914 299.640822 420.902914 300.051849 351.462639 240.50297 423.339203 275.307487 423.339203 273.868894 474.955321"></polygon>
+        <filter x="-74.5%" y="-40.5%" width="249.0%" height="213.4%" filterUnits="objectBoundingBox" id="filter-8">
+            <feOffset dx="0" dy="20" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="20" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.607892215   0 0 0 0 0.607803345   0 0 0 0 0.607922554  0 0 0 1 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="v-copy-6">
+            <g id="Cloud-+-Sun" transform="translate(62.000000, 66.000000)">
+                <g id="Cloud">
+                    <use fill="black" fill-opacity="1" filter="url(#filter-4)" xlink:href="#path-3"></use>
+                    <use fill-opacity="0.9" fill="url(#linearGradient-1)" fill-rule="evenodd" xlink:href="#path-3"></use>
+                    <use fill="url(#linearGradient-2)" fill-rule="evenodd" style="mix-blend-mode: soft-light;" xlink:href="#path-3"></use>
+                </g>
+                <path d="M200.666667,222.596137 C143.155357,217.748446 98,169.860345 98,111.5 C98,49.9202504 148.274692,0 210.291667,0 C252.957665,0 290.065961,23.6275895 309.069549,58.4242189 C313.468128,57.712749 317.982227,57.3428571 322.583333,57.3428571 C368.653086,57.3428571 406,94.4264717 406,140.171429 C406,181.582989 375.393656,215.896452 335.416667,222.025832 L335.416667,223 L200.666667,223 L200.666667,222.596137 Z" id="Cloud" fill="url(#linearGradient-5)" opacity="0.164345562"></path>
+            </g>
+            <g id="notification" transform="translate(407.000000, 106.000000)">
+                <ellipse id="bg" fill="#FFFFFF" cx="30" cy="30.5" rx="30" ry="30.5"></ellipse>
+                <path d="M33.5849609,24.2519531 C31.9899009,24.2519531 30.7548872,24.851231 29.8798828,26.0498047 C29.0048784,27.2483784 28.5673828,28.9186091 28.5673828,31.0605469 C28.5673828,35.5176004 30.2398921,37.7460938 33.5849609,37.7460938 C34.9886138,37.7460938 36.6884666,37.3951858 38.6845703,36.6933594 L38.6845703,40.2480469 C37.0439371,40.931644 35.2119242,41.2734375 33.1884766,41.2734375 C30.2809099,41.2734375 28.0569738,40.3916104 26.5166016,38.6279297 C24.9762293,36.864249 24.2060547,34.3326988 24.2060547,31.0332031 C24.2060547,28.9550677 24.5843061,27.1344479 25.3408203,25.5712891 C26.0973345,24.0081302 27.1842377,22.8095745 28.6015625,21.9755859 C30.0188873,21.1415974 31.6800035,20.7246094 33.5849609,20.7246094 C35.5263769,20.7246094 37.4768782,21.1940057 39.4365234,22.1328125 L38.0693359,25.578125 C37.3219364,25.2226545 36.5699908,24.9127617 35.8134766,24.6484375 C35.0569624,24.3841133 34.3141312,24.2519531 33.5849609,24.2519531 Z" id="C" fill="#6A08C0"></path>
+            </g>
+            <g id="Bolt" transform="translate(287.474155, 413.208980) scale(-1, 1) rotate(2.000000) translate(-287.474155, -413.208980) ">
+                <use fill="black" fill-opacity="1" filter="url(#filter-8)" xlink:href="#path-7"></use>
+                <use fill="url(#linearGradient-6)" fill-rule="evenodd" xlink:href="#path-7"></use>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -6,6 +6,7 @@ body {
 }
 
 main {
+  position: relative;
   margin: 0;
   width: 100%;
   height: 100%;
@@ -17,12 +18,21 @@ main {
     position: absolute;
     top: 0;
     left: 0;
+    pointer-events: none;
     height: 100%;
     width: 100%;
     opacity: 0.19;
     transition: background-image 0.4s;
     background-image: linear-gradient(-180deg, #A2BACB 0%, #9B9B9B 100%);
     background-image: linear-gradient(-46deg, rgba(3,0,0,0.34) 0%, rgba(255,255,255,0.34) 100%);
+
+    .weatherIconBlock {
+      background: url('/images/rain.svg');
+      background-size: contain;
+      h1, h2{
+        color: #fff;
+      }
+    }
   }
   //clear day
   &.code-01d {
@@ -31,6 +41,13 @@ main {
       background: #50D2C2;
       background-image: linear-gradient(-37deg, #FFD5C2 0%, #FFEFDD 100%);
     }
+    .weatherIconBlock {
+      background: url('/images/sunny-clearday.svg');
+      background-size: contain;
+      h1, h2{
+        color: #fff;
+      }
+    }
   }
   //clear night
   &.code-01n {
@@ -38,6 +55,13 @@ main {
       opacity: 1;
       background-image: linear-gradient(-225deg, #458ED7 0%, #246EB9 100%);
       background-image: linear-gradient(-46deg, rgba(3,0,0,0.34) 0%, rgba(255,255,255,0.34) 100%);
+    }
+    .weatherIconBlock {
+      background: url('/images/clearnight.svg');
+      background-size: contain;
+      h1, h2{
+        color: #000;
+      }
     }
   }
   //snow
@@ -48,6 +72,13 @@ main {
       background-image: linear-gradient(-27deg, #55B7FF 0%, #A2A2A2 100%);
       background-image: linear-gradient(-27deg, #55B7FF 0%, #A2A2A2 100%);
     }
+    .weatherIconBlock {
+      background: url('/images/snow.svg');
+      background-size: contain;
+      h1, h2{
+        color: #fff;
+      }
+    }
   }
   //lightning
   &.code-11d,
@@ -56,6 +87,13 @@ main {
       opacity: 0.42;
       background-image: linear-gradient(-134deg, #3023AE 0%, #C86DD7 100%);
       background-image: linear-gradient(-46deg, rgba(3,0,0,0.34) 0%, rgba(255,255,255,0.34) 100%);
+    }
+    .weatherIconBlock {
+      background: url('/images/lightning.svg');
+      background-size: contain;
+      h1, h2{
+        color: #fff;
+      }
     }
   }
   //cloudy day
@@ -67,6 +105,13 @@ main {
       background-image: linear-gradient(-46deg, rgba(3,0,0,0.34) 0%, rgba(255,255,255,0.34) 100%);
       background-image: linear-gradient(-37deg, #FFD5C2 0%, #FFEFDD 100%);
     }
+    .weatherIconBlock {
+      background: url('/images/cloudyday.svg');
+      background-size: contain;
+      h1, h2{
+        color: #fff;
+      }
+    }
   }
   //cloudy night
   &.code-02n,
@@ -75,6 +120,13 @@ main {
       opacity: 1;
       background-image: linear-gradient(-36deg, #1F2D3F 0%, #384B61 100%);
       background-image: linear-gradient(-46deg, rgba(3,0,0,0.34) 0%, rgba(255,255,255,0.34) 100%);
+    }
+    .weatherIconBlock {
+      background: url('/images/cloudynight.svg');
+      background-size: contain;
+      h1, h2{
+        color: #000;
+      }
     }
   }
   //full cloud
@@ -85,5 +137,62 @@ main {
       background: #7689FF;
       background-image: linear-gradient(-46deg, rgba(3,0,0,0.34) 0%, rgba(255,255,255,0.34) 100%);
     }
+    .weatherIconBlock {
+      background: url('/images/fullcloudy.svg');
+      background-size: contain;
+      h1, h2{
+        color: #fff;
+      }
+    }
+  }
+}
+
+.welcomeCard {
+  min-width: 300px;
+  max-width: 640px;
+  margin: 0 auto;
+  padding-top: 140px;
+}
+.welcomeMsg{
+  text-transform: uppercase;
+  font-size: 3.0rem;
+  letter-spacing: 1px;
+  font-weight: $font-weight-light;
+}
+.weatherIconBlock{
+  width: 270px;
+  height: 270px;
+  position: relative;
+  margin: 0 auto 100px;
+  h1{
+    font-size: 6.4rem;
+    font-weight: $font-weight-bold;
+    position: absolute;
+    top: 110px;
+    left: 0;
+    right: 0;
+  }
+  h2{
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    position: absolute;
+    top: 185px;
+    left: 0;
+    right: 0;
+    letter-spacing: 1.8px;
+  }
+}
+a.bottomLink {
+  position: absolute;
+  bottom: 80px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+
+  &:visited, &:active{
+    color: #000;
   }
 }
