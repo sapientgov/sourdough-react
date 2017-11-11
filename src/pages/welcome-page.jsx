@@ -15,11 +15,12 @@ export default class WelcomePage extends React.Component {
 
   constructor(props) {
     super(props);
+    this.userStore = this.props.store.userStore;
     this.weatherStore = this.props.store.weatherStore;
   }
 
   componentWillMount() {
-    this.weatherStore.fetchCurrentWeatherByGeolocation()
+    this.userStore.checkUser();
   }
 
   componentWillUnmount() {
