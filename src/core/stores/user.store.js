@@ -1,6 +1,7 @@
 import {action, observable} from 'mobx';
 
 import {cookieService} from '../services/cookie.service';
+import {weatherStore} from './weather.store';
 
 class UserStore {
 
@@ -8,11 +9,16 @@ class UserStore {
     if (document.cookie.indexOf('_brella') < 0) {
       this.setInitialCookie();
     } else {
-      this.getReturnUser();
+      const cookie = cookieService.getCookie('_brella');
+      console.log('cookie', cookie);
+      cookie.isReturningUser
+        ? this.notReturningUser()
+        : this.getReturningUser();
     }
   }
 
   @action setInitialCookie() {
+    this.isReturningUser = false;
     navigator.geolocation.getCurrentPosition((position) => {
       const initialCookie = {
         isReturningUser: false,
@@ -25,10 +31,15 @@ class UserStore {
     })
   }
 
-  @action getReturnUser() {
+  @action notReturningUser() {
+    weatherStore.fetchCurrentWeatherByGeolocation();
+    this.isReturningUser = false;
+  }
+
+  @action getReturningUser() {
     this.currentUser = JSON.parse(cookieService.getCookie('_brella'));
     this.isReturningUser = this.currentUser.isReturningUser;
-    console.log('currentUser', this.currentUser);
+    weatherStore.updateUserWeather(this.currentUser);
   }
 
   @observable isReturningUser = false;

@@ -3,14 +3,14 @@ import PropTypes from 'prop-types';
 import {observer} from 'mobx-react';
 
 @observer
-
 export default class TextInput extends React.Component {
 
   static propTypes = {
     id: PropTypes.string.isRequired,
     value: PropTypes.string.isRequired,
     handleOnChange: PropTypes.func.isRequired,
-    placeholder: PropTypes.string
+    placeholder: PropTypes.string,
+    className: PropTypes.string
   }
 
   static defaultProps = {
@@ -24,7 +24,9 @@ export default class TextInput extends React.Component {
 
   render() {
     return (
-      <input id={this.props.id} type="text" value={this.props.value} placeholder={this.props.placeholder} onChange={this.handleOnChange}/>
+      <div className={`form-group ${this.props.className}`}>
+        <input className="form-control" id={this.props.id} type="text" value={this.props.value} onChange={this.handleOnChange}/>
+      </div>
     )
   }
 

@@ -5,9 +5,8 @@ import {cookieService} from '../services/cookie.service';
 
 class SettingsStore {
 
-  @action populateFormFields(settingsObject) {
+  @action populateFields(settingsObject) {
     this.settingsObject = settingsObject;
-    console.log('populateFormFields settingsObject', settingsObject, this.settingsObject);
   }
 
   @action saveSettings() {
