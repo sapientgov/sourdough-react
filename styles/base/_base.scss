@@ -264,9 +264,24 @@ a.bottomLink {
 
   .avatar {
     height: 320px;
-    background: url('/images/clearday-avatar.png');
     background-repeat: no-repeat;
     background-size: contain;
+    background: url('/images/clearday-avatar.png');
+    &.code-50d,
+    &.code-50n,
+    &.code-09d,
+    &.code-09n,
+    &.code-10d,
+    &.code-10n,
+    &.code-11d,
+    &.code-11n {
+      background: url('/images/rain-avatar.png');
+    }
+    &.code-13n,
+    &.code-13d{
+      background: url('/images/sweater-avatar.png');
+    }
+
   }
 
   .bottomCard {
