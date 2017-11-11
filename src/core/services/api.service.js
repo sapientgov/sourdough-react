@@ -9,6 +9,10 @@ class ApiService {
   getCurrentWeatherByGeolocation(latitude, longitude) {
     return axios.get(`${openWeatherBase}?lat=${latitude}&lon=${longitude}&units=imperial&APPID=${key}`);
   }
+
+  getCurrentWeatherByString(string) {
+    return axios.get(`${openWeatherBase}?q=${string}&units=imperial&APPID=${key}`);
+  }
 }
 
 export const apiService = new ApiService();

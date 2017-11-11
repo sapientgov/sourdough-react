@@ -4,16 +4,31 @@ import {apiService} from '../services/api.service';
 
 class WeatherStore {
 
-  @action fetchCurrentWeatherByGeolocation() {
-
+  @action fetchCurrentWeatherByString(string) {
     this.isLoading = true;
 
+    const success = (res) => {
+      this.currentWeather = res.data;
+      console.log('weather: ', this.currentWeather);
+      this.iconCode = res.data.weather[0].icon;
+      this.isLoading = false;
+    }
+
+    const fail = (res) => {
+      console.log('FAIL!!', res);
+    }
+
+    return apiService.getCurrentWeatherByString(string).then(success, fail);
+  }
+
+  @action fetchCurrentWeatherByGeolocation() {
+    this.isLoading = true;
     if (navigator.geolocation) {
       console.log('ding!');
       return navigator.geolocation.getCurrentPosition((position) => {
         const success = (res) => {
-          console.log('res', res.data);
           this.currentWeather = res.data;
+          console.log('weather: ', this.currentWeather);
           this.iconCode = res.data.weather[0].icon;
           this.isLoading = false;
         }

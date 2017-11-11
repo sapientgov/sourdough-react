@@ -8,12 +8,29 @@ import {masterStore} from './core/stores/master.store.js';
 
 import ErrorPage from './pages/error-page';
 import HomePage from './pages/home-page';
+import WelcomePage from './pages/welcome-page';
 import SettingsPage from './pages/settings-page';
 import ConfigureAlarmPage from './pages/configure-alarm-page';
 
 import '../styles/app.scss';
 
-@observer class App extends React.Component {
+@observer
+class App extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.userStore = masterStore.userStore;
+  }
+
+  componentWillMount() {
+    this.userStore.checkUser();
+  }
+
+  getLandingPage() {
+    return this.userStore.isReturningUser
+      ? HomePage
+      : WelcomePage
+  }
 
   render() {
     return (
@@ -21,7 +38,7 @@ import '../styles/app.scss';
 				<Provider store={masterStore}>
           <main id="main-content" className={`code-${masterStore.weatherStore.iconCode}`}>
             <Switch>
-              <Route exact path="/" component={HomePage} />
+              <Route exact path="/" component={this.getLandingPage()} />
               <Route path="/settings" component={SettingsPage} />
               <Route path="/alarm" component={ConfigureAlarmPage} />
               <Route exact path="/error/404" component={ErrorPage} />

@@ -5,10 +5,7 @@ import {Link} from 'react-router-dom';
 
 @inject('store')
 @observer
-export default class HomePage extends React.Component {
-  static propTypes = {
-    store: PropTypes.object
-  }
+export default class WelcomePage extends React.Component {
 
   static propTypes = {
     store: PropTypes.object
@@ -16,20 +13,11 @@ export default class HomePage extends React.Component {
 
   constructor(props) {
     super(props);
-    this.userStore = this.props.store.userStore;
     this.weatherStore = this.props.store.weatherStore;
   }
 
   componentWillMount() {
-    this.userStore.checkUser();
-  }
-
-  componentDidMount() {
-    if (this.userStore.currentUser.settings.locationInput) {
-      this.weatherStore.fetchCurrentWeatherByString(this.userStore.currentUser.settings.locationInput);
-    } else {
-      this.weatherStore.fetchCurrentWeatherByGeolocation()
-    }
+    this.weatherStore.fetchCurrentWeatherByGeolocation()
   }
 
   componentWillUnmount() {
@@ -38,7 +26,7 @@ export default class HomePage extends React.Component {
 
   renderIsLoading = () => {
     return (
-      <h1>Loading Home Page...</h1>
+      <h1>Loading Welcome Page...</h1>
     )
   }
 
