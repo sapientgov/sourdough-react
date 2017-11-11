@@ -51,7 +51,6 @@ export default class HomePage extends React.Component {
   }
 
   renderMainElements = () => {
-    console.log('WHHHYYYYYY', this.weatherStore.displayTemp);
     return (
       <div className="returningVisitorCard">
         <div className="avatar" aria-hidden="true"></div>

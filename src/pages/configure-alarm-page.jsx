@@ -87,7 +87,7 @@ export default class ConfigureAlarmPage extends React.Component {
     )
   }
 
-  handleAmPmOnChange = (e) => {
+  handleAmPmOnChange = () => {
     this.alarmStore.toggleAmPm();
   }
 
