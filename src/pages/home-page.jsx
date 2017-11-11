@@ -58,7 +58,7 @@ export default class HomePage extends React.Component {
       <div>
       <HeaderBlock />
       <div className="returningVisitorCard">
-        <div className="avatar" aria-hidden="true"></div>
+        <div className={`avatar code-${this.weatherStore.iconCode}`} aria-hidden="true"></div>
         <div className="bottomCard">
           <div className="clothingMsg">{this.weatherStore.clothingPhrase}</div>
           <h1>{this.weatherStore.displayTemp}<span className="degIcon">&deg;</span></h1>
