@@ -41,7 +41,7 @@ class AlarmStore {
              }
 
              console.log(JSON.stringify(subscription));
-
+             this.subscriptionData = subscription;
              // construct an HTTP request
             var xhr = new XMLHttpRequest();
             xhr.open('POST', '/subscriptions', true);
@@ -85,15 +85,14 @@ class AlarmStore {
   }
 
   @action sendAlarmToServiceWorker() {
-    let data = {
-      coord: {
-        lat: weatherStore.coords.lat.toString(),
-        lon: weatherStore.coords.lon.toString()
-      },
-      hour: this.alarmObject.selectHour,
-      minute: this.alarmObject.selectMinute
-    }
-    console.log('DATA', data);
+    console.log('DATA before', this.subscriptionData);
+    this.subscriptionData.coord = {
+      lat: weatherStore.coords.lat.toString(),
+      lon: weatherStore.coords.lon.toString()
+    };
+    this.subscriptionData.hour = this.alarmObject.selectHour;
+    this.subscriptionData.minute = this.alarmObject.selectMinute;
+    console.log('DATA after', this.subscriptionData);
     const success = (res) => {
       console.log('success', res);
     }
@@ -102,14 +101,16 @@ class AlarmStore {
       console.log('fail', res);
     }
 
-    return apiService.sendServiceWorkerSubscriptionData(data).then(success, fail);
+    return apiService.sendServiceWorkerSubscriptionData(this.subscriptionData).then(success, fail);
   }
 
   @action resetAlarm() {
     this.alarmObject = Object.assign({}, this.alarmDefaults);
     this.timeIsPm = false;
+    this.subscriptionData = {};
   }
 
+  @observable subscriptionData = {};
   @observable timeIsPm = false;
   @observable alarmDefaults = {
     selectHour: '07',
