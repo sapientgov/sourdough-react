@@ -5,61 +5,80 @@ body {
   background: #fff;
 }
 
-main {
-  position: relative;
-  margin: 0;
-  width: 100%;
-  height: 100%;
-  min-height: 100vh;
-  text-align: center;
-  //rain-default
-  &:before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    pointer-events: none;
-    height: 100%;
-    width: 100%;
-    opacity: 0.19;
-    transition: background-image 0.4s;
-    background-image: linear-gradient(-180deg, #A2BACB 0%, #9B9B9B 100%);
-    background-image: linear-gradient(-46deg, rgba(3,0,0,0.34) 0%, rgba(255,255,255,0.34) 100%);
-
-    .weatherIconBlock {
-      background: url('/images/rain.svg');
-      background-size: contain;
-      h1, h2{
-        color: #fff;
-      }
+header {
+  height: 60px;
+  line-height: 60px;
+  text-align: left;
+  .menuToggle {
+    width: 48px;
+    height: 60px;
+    text-align: center;
+    appearance: none;
+    padding-top: 5px;
+    border: 0;
+    background: none;
+    cursor: pointer;
+    span{
+      display: block;
+      width: 24px;
+      height: 2px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 5px;
+      background: #cdcdcd;
+      border-radius: 3px;
     }
   }
+
+}
+
+.wrapper {
+  .gradient{
+    background-image: linear-gradient(-180deg, #A2BACB 0%, #9B9B9B 100%);
+background-image: linear-gradient(-46deg, rgba(3,0,0,0.34) 0%, rgba(255,255,255,0.34) 100%);
+  }
+  .weatherIconBlock {
+    background: url('/images/rain.svg');
+    background-size: contain;
+
+    h1,
+    h2 {
+      color: #fff;
+    }
+  }
+
   //clear day
   &.code-01d {
-    &:before {
+    .gradient {
       opacity: 1;
       background: #50D2C2;
       background-image: linear-gradient(-37deg, #FFD5C2 0%, #FFEFDD 100%);
     }
+
     .weatherIconBlock {
       background: url('/images/sunny-clearday.svg');
       background-size: contain;
-      h1, h2{
+
+      h1,
+      h2 {
         color: #fff;
       }
     }
   }
   //clear night
   &.code-01n {
-    &:before {
+    .gradient {
       opacity: 1;
       background-image: linear-gradient(-225deg, #458ED7 0%, #246EB9 100%);
       background-image: linear-gradient(-46deg, rgba(3,0,0,0.34) 0%, rgba(255,255,255,0.34) 100%);
     }
+
     .weatherIconBlock {
       background: url('/images/clearnight.svg');
       background-size: contain;
-      h1, h2{
+
+      h1,
+      h2 {
         color: #000;
       }
     }
@@ -67,15 +86,18 @@ main {
   //snow
   &.code-13d,
   &.code-13n {
-    &:before {
+    .gradient {
       opacity: 0.19;
       background-image: linear-gradient(-27deg, #55B7FF 0%, #A2A2A2 100%);
       background-image: linear-gradient(-27deg, #55B7FF 0%, #A2A2A2 100%);
     }
+
     .weatherIconBlock {
       background: url('/images/snow.svg');
       background-size: contain;
-      h1, h2{
+
+      h1,
+      h2 {
         color: #fff;
       }
     }
@@ -83,15 +105,18 @@ main {
   //lightning
   &.code-11d,
   &.code-11n {
-    &:before {
+    .gradient {
       opacity: 0.42;
       background-image: linear-gradient(-134deg, #3023AE 0%, #C86DD7 100%);
       background-image: linear-gradient(-46deg, rgba(3,0,0,0.34) 0%, rgba(255,255,255,0.34) 100%);
     }
+
     .weatherIconBlock {
       background: url('/images/lightning.svg');
       background-size: contain;
-      h1, h2{
+
+      h1,
+      h2 {
         color: #fff;
       }
     }
@@ -99,16 +124,19 @@ main {
   //cloudy day
   &.code-02d,
   &.code-03d {
-    &:before {
+    .gradient {
       opacity: 0.19;
       background: #7689FF;
       background-image: linear-gradient(-46deg, rgba(3,0,0,0.34) 0%, rgba(255,255,255,0.34) 100%);
       background-image: linear-gradient(-37deg, #FFD5C2 0%, #FFEFDD 100%);
     }
+
     .weatherIconBlock {
       background: url('/images/cloudyday.svg');
       background-size: contain;
-      h1, h2{
+
+      h1,
+      h2 {
         color: #fff;
       }
     }
@@ -116,15 +144,18 @@ main {
   //cloudy night
   &.code-02n,
   &.code-03n {
-    &:before {
+    .gradient {
       opacity: 1;
       background-image: linear-gradient(-36deg, #1F2D3F 0%, #384B61 100%);
       background-image: linear-gradient(-46deg, rgba(3,0,0,0.34) 0%, rgba(255,255,255,0.34) 100%);
     }
+
     .weatherIconBlock {
       background: url('/images/cloudynight.svg');
       background-size: contain;
-      h1, h2{
+
+      h1,
+      h2 {
         color: #000;
       }
     }
@@ -132,56 +163,82 @@ main {
   //full cloud
   &.code-04d,
   &.code-04n {
-    &:before {
+    .gradient {
       opacity: 0.19;
       background: #7689FF;
       background-image: linear-gradient(-46deg, rgba(3,0,0,0.34) 0%, rgba(255,255,255,0.34) 100%);
     }
+
     .weatherIconBlock {
       background: url('/images/fullcloudy.svg');
       background-size: contain;
-      h1, h2{
+
+      h1,
+      h2 {
         color: #fff;
       }
     }
   }
 }
 
+.gradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0.19;
+  transition: background-image 0.4s;
+  background-image: linear-gradient(-180deg, #A2BACB 0%, #9B9B9B 100%);
+  background-image: linear-gradient(-46deg, rgba(3,0,0,0.34) 0%, rgba(255,255,255,0.34) 100%);
+}
+
+main {
+  position: relative;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  text-align: center;
+  z-index: 10;
+  //rain-default
+}
+
 .welcomeCard {
   min-width: 300px;
   max-width: 640px;
   margin: 0 auto;
-  padding-top: 140px;
+  padding-top: 80px;
 }
-.welcomeMsg{
+
+.welcomeMsg {
   text-transform: uppercase;
   font-size: 3.0rem;
   letter-spacing: 1px;
   font-weight: $font-weight-light;
 }
-.weatherIconBlock{
+
+.weatherIconBlock {
   width: 270px;
   height: 270px;
   position: relative;
   margin: 0 auto 100px;
-  h1{
-    font-size: 6.4rem;
-    font-weight: $font-weight-bold;
+
+  h1 {
     position: absolute;
     top: 110px;
     left: 0;
     right: 0;
   }
-  h2{
-    text-transform: uppercase;
-    font-size: 1.2rem;
+
+  h2 {
     position: absolute;
     top: 185px;
     left: 0;
     right: 0;
-    letter-spacing: 1.8px;
   }
 }
+
 a.bottomLink {
   position: absolute;
   bottom: 80px;
@@ -191,8 +248,48 @@ a.bottomLink {
   text-transform: uppercase;
   font-size: 1.2rem;
   letter-spacing: 2px;
+  color: #000;
 
-  &:visited, &:active{
+  &:active,
+  &:visited {
     color: #000;
+  }
+}
+
+.returningVisitorCard {
+  min-width: 300px;
+  max-width: 320px;
+  margin: 30px auto 0;
+  background: #fff;
+  min-height: 550px;
+  border: 1px solid #000;
+  border-radius: 12px;
+  overflow: hidden;
+
+  .avatar {
+    height: 320px;
+    background: url('/images/clearday-avatar.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  .bottomCard {
+    background-color: #fff;
+
+    .clothingMsg {
+      margin-top: 15px;
+      font-weight: $font-weight-light;
+      font-size: 1.8rem;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin-bottom: 0;
+    }
+
+    .hiLow {
+      font-size: 1.6rem;
+      font-weight: $font-weight-light;
+    }
   }
 }
