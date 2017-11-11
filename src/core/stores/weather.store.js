@@ -14,7 +14,7 @@ class WeatherStore {
         const success = (res) => {
           console.log('res', res.data);
           this.currentWeather = res.data;
-          this.iconCode = res.data.weather[0].icon;
+          this.conditionRes(res.data);
           this.isLoading = false;
         }
 
@@ -32,6 +32,11 @@ class WeatherStore {
     }
   }
 
+  @action conditionRes(resData) {
+    this.iconCode = resData.weather[0].icon;
+    this.displayTemp = parseInt(resData.main.temp);
+    this.displayLocation = resData.name;
+  }
 
   @action resetPage() {
     this.currentWeather = {};
@@ -40,6 +45,8 @@ class WeatherStore {
 
   @observable currentWeather = {};
   @observable iconCode = 'xxx';
+  @observable displayTemp = '--';
+  @observable displayLocation = '';
   @observable isLoading = true;
 }
 

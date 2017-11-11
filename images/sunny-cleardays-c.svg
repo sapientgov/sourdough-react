@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="542px" height="542px" viewBox="0 0 542 542" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47.1 (45422) - http://www.bohemiancoding.com/sketch -->
+    <title>v</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="50%" y1="100%" x2="50%" y2="0%" id="linearGradient-1">
+            <stop stop-color="#030000" stop-opacity="0.6" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" stop-opacity="0.6" offset="100%"></stop>
+        </linearGradient>
+        <filter x="-23.3%" y="-16.7%" width="146.7%" height="146.7%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="20" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="20" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 1   0 0 0 0 0.50980395   0 0 0 0 0.29411766  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+        <linearGradient x1="50%" y1="100%" x2="50%" y2="0%" id="linearGradient-3">
+            <stop stop-color="#FFC383" offset="0%"></stop>
+            <stop stop-color="#FF6E5F" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="v">
+            <g id="date" filter="url(#filter-2)" transform="translate(121.000000, 121.000000)" fill="url(#linearGradient-3)">
+                <circle id="oval" cx="150" cy="150" r="150"></circle>
+            </g>
+            <g id="notification" transform="translate(347.000000, 135.000000)">
+                <ellipse id="bg" fill="#FFFFFF" cx="30" cy="30.5" rx="30" ry="30.5"></ellipse>
+                <path d="M33.5849609,24.2519531 C31.9899009,24.2519531 30.7548872,24.851231 29.8798828,26.0498047 C29.0048784,27.2483784 28.5673828,28.9186091 28.5673828,31.0605469 C28.5673828,35.5176004 30.2398921,37.7460938 33.5849609,37.7460938 C34.9886138,37.7460938 36.6884666,37.3951858 38.6845703,36.6933594 L38.6845703,40.2480469 C37.0439371,40.931644 35.2119242,41.2734375 33.1884766,41.2734375 C30.2809099,41.2734375 28.0569738,40.3916104 26.5166016,38.6279297 C24.9762293,36.864249 24.2060547,34.3326988 24.2060547,31.0332031 C24.2060547,28.9550677 24.5843061,27.1344479 25.3408203,25.5712891 C26.0973345,24.0081302 27.1842377,22.8095745 28.6015625,21.9755859 C30.0188873,21.1415974 31.6800035,20.7246094 33.5849609,20.7246094 C35.5263769,20.7246094 37.4768782,21.1940057 39.4365234,22.1328125 L38.0693359,25.578125 C37.3219364,25.2226545 36.5699908,24.9127617 35.8134766,24.6484375 C35.0569624,24.3841133 34.3141312,24.2519531 33.5849609,24.2519531 Z" id="C" fill="#FF7060"></path>
+            </g>
+        </g>
+    </g>
+</svg>

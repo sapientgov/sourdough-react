@@ -3,13 +3,11 @@ import PropTypes from 'prop-types';
 import {observer, inject} from 'mobx-react';
 import {Link} from 'react-router-dom';
 
+import WeatherIconBlock from '../components/weather-icon-block/weather-icon-block';
+
 @inject('store')
 @observer
 export default class HomePage extends React.Component {
-  static propTypes = {
-    store: PropTypes.object
-  }
-
   static propTypes = {
     store: PropTypes.object
   }
@@ -34,13 +32,27 @@ export default class HomePage extends React.Component {
     )
   }
 
+  renderWelcomeMsg = () => {
+    let today = new Date();
+    let curHr = today.getHours();
+    let msg = 'Good Evening!';
+
+    if (curHr < 12) {
+      msg = 'Good Morning!';
+    } else if (curHr < 18) {
+      msg = 'Good Afternoon!';
+    }
+    return (<div className="welcomeMsg">{msg}</div>);
+  }
+
   renderMainElements = () => {
     return (
-      <div className="main-elements">
-        <h1>{this.weatherStore.currentWeather.main.temp}</h1>
-        <h2>{this.weatherStore.currentWeather.name}</h2>
-        <div><Link to="/settings">Settings</Link></div>
-        <div><Link to="/alarm">Alarm</Link></div>
+      <div className="welcomeCard">
+        {this.renderWelcomeMsg()}
+        <WeatherIconBlock
+          temp={this.weatherStore.displayTemp}
+          location={this.weatherStore.displayLocation} />
+        <div><Link to="/settings" className="bottomLink">Get Started</Link></div>
       </div>
     )
   }

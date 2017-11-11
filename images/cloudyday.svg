@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="542px" height="542px" viewBox="0 0 542 542" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47.1 (45422) - http://www.bohemiancoding.com/sketch -->
+    <title>cloudyday</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="50%" y1="100%" x2="50%" y2="0%" id="linearGradient-1">
+            <stop stop-color="#030000" stop-opacity="0.6" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" stop-opacity="0.6" offset="100%"></stop>
+        </linearGradient>
+        <filter x="-28.3%" y="-20.2%" width="156.7%" height="156.7%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="20" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="20" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 1   0 0 0 0 0.50980395   0 0 0 0 0.29411766  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+        <linearGradient x1="50%" y1="3.061617e-15%" x2="50%" y2="100%" id="linearGradient-3">
+            <stop stop-color="#FFC383" offset="0%"></stop>
+            <stop stop-color="#FF6E5F" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="24.9688%" y1="100%" x2="75.0312%" y2="0%" id="linearGradient-4">
+            <stop stop-color="#55B7FF" offset="0%"></stop>
+            <stop stop-color="#7E5AFF" offset="100%"></stop>
+        </linearGradient>
+        <path d="M139.666667,373.44401 C61.4288782,366.770282 0,300.843614 0,220.5 C0,135.724291 68.3931682,67 152.760417,67 C210.802797,67 261.284538,99.527668 287.136822,147.431548 C293.120602,146.45208 299.261537,145.942857 305.520833,145.942857 C368.193647,145.942857 419,196.995188 419,259.971429 C419,316.981962 377.363447,364.220675 322.979167,372.65888 L322.979167,374 L139.666667,374 L139.666667,373.44401 Z" id="path-5"></path>
+        <filter x="-16.7%" y="-16.3%" width="133.4%" height="145.6%" filterUnits="objectBoundingBox" id="filter-6">
+            <feOffset dx="0" dy="20" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="20" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.509803922   0 0 0 0 0.62745098   0 0 0 0 1  0 0 0 1 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <linearGradient x1="24.9688%" y1="100%" x2="75.0312%" y2="0%" id="linearGradient-7">
+            <stop stop-color="#55B7FF" stop-opacity="0.6" offset="0%"></stop>
+            <stop stop-color="#7E5AFF" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="cloudyday">
+            <g id="Cloud-+-Sun" transform="translate(54.000000, 84.000000)">
+                <g id="Sunny-icon" filter="url(#filter-2)" transform="translate(168.000000, 0.000000)" fill="url(#linearGradient-3)">
+                    <circle id="Oval" cx="123.5" cy="123.5" r="123.5"></circle>
+                    <circle id="Oval" cx="123.5" cy="123.5" r="79.5888889"></circle>
+                </g>
+                <g id="Cloud">
+                    <use fill="black" fill-opacity="1" filter="url(#filter-6)" xlink:href="#path-5"></use>
+                    <use fill="url(#linearGradient-4)" fill-rule="evenodd" xlink:href="#path-5"></use>
+                    <use fill="url(#linearGradient-1)" fill-rule="evenodd" style="mix-blend-mode: soft-light;" xlink:href="#path-5"></use>
+                </g>
+                <path d="M200.666667,266.596137 C143.155357,261.748446 98,213.860345 98,155.5 C98,93.9202504 148.274692,44 210.291667,44 C252.957665,44 290.065961,67.6275895 309.069549,102.424219 C313.468128,101.712749 317.982227,101.342857 322.583333,101.342857 C368.653086,101.342857 406,138.426472 406,184.171429 C406,225.582989 375.393656,259.896452 335.416667,266.025832 L335.416667,267 L200.666667,267 L200.666667,266.596137 Z" id="Cloud" fill="url(#linearGradient-7)" opacity="0.328804348"></path>
+            </g>
+            <g id="notification" transform="translate(429.000000, 128.000000)">
+                <ellipse id="bg" fill="#FFFFFF" cx="30" cy="30.5" rx="30" ry="30.5"></ellipse>
+                <polygon id="F" fill="#4E6DFF" points="30.5019531 41 26.3320312 41 26.3320312 21.0117188 37.7890625 21.0117188 37.7890625 24.484375 30.5019531 24.484375 30.5019531 29.6386719 37.2832031 29.6386719 37.2832031 33.0976562 30.5019531 33.0976562"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>
