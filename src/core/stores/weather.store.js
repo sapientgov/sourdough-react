@@ -14,8 +14,9 @@ class WeatherStore {
       this.isLoading = false;
     }
 
-    const fail = (res) => {
-      console.log('FAIL!!', res);
+    const fail = () => {
+      console.log('Search failed! Will default to geolocation');
+      this.fetchCurrentWeatherByGeolocation();
     }
 
     return apiService.getCurrentWeatherByString(string).then(success, fail);
@@ -24,12 +25,10 @@ class WeatherStore {
   @action fetchCurrentWeatherByGeolocation() {
     this.isLoading = true;
     if (navigator.geolocation) {
-      console.log('ding!');
       return navigator.geolocation.getCurrentPosition((position) => {
         const success = (res) => {
           this.currentWeather = res.data;
-          console.log('weather: ', this.currentWeather);
-          this.iconCode = res.data.weather[0].icon;
+          this.conditionRes(res.data);
           this.isLoading = false;
         }
 
@@ -47,6 +46,11 @@ class WeatherStore {
     }
   }
 
+  @action conditionRes(resData) {
+    this.iconCode = resData.weather[0].icon;
+    this.displayTemp = parseInt(resData.main.temp);
+    this.displayLocation = resData.name;
+  }
 
   @action resetPage() {
     this.currentWeather = {};
@@ -55,6 +59,8 @@ class WeatherStore {
 
   @observable currentWeather = {};
   @observable iconCode = 'xxx';
+  @observable displayTemp = '--';
+  @observable displayLocation = '';
   @observable isLoading = true;
 }
 

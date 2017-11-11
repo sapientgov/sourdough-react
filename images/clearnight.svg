@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="542px" height="542px" viewBox="0 0 542 542" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47.1 (45422) - http://www.bohemiancoding.com/sketch -->
+    <title>clearnight</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#FAD961" offset="0%"></stop>
+            <stop stop-color="#F7A21C" offset="100%"></stop>
+        </linearGradient>
+        <path d="M261.872579,477 C142.286639,477 45,379.835011 45,260.394164 C45,155.390475 120.094034,65.7735046 223.559296,47.3055679 C229.873713,46.1719118 236.304525,48.2357473 240.795424,52.7800612 C245.276623,57.3340645 247.235935,63.8065628 246.01379,70.0755843 C243.77319,81.5574862 242.638341,93.0490774 242.638341,104.240298 C242.638341,202.296709 322.52396,282.078971 420.712659,282.078971 C430.936001,282.078971 441.21754,281.119723 452.178048,279.152781 C458.511865,278.048193 464.923277,280.073271 469.414176,284.617585 C473.914774,289.171588 475.864387,295.653776 474.642241,301.922798 C454.923025,403.370488 365.425137,477 261.872579,477 L261.872579,477 Z" id="path-2"></path>
+        <filter x="-16.3%" y="-11.6%" width="132.6%" height="132.6%" filterUnits="objectBoundingBox" id="filter-3">
+            <feOffset dx="0" dy="20" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="20" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.0901960784   0 0 0 0 0.133333333   0 0 0 0 0.192156863  0 0 0 1 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <path d="M416.303344,150.65686 C416.274165,145.433284 413.96615,117.247916 412.954342,105.111799 C412.766475,98.7552227 407.606567,95.9968716 407.606567,95.9968716 L370.336597,68.9110144 C366.34067,65.4055063 367.552512,60.1529436 373.339435,59.4564214 C379.651691,59.033337 407.132477,57.0588851 419.247757,56.185088 C425.815043,55.7780523 428.853247,50.5163477 428.853247,50.5163477 L453.997687,15.9181208 C458.940108,8.79933292 465.126632,12.3578904 465.018321,18.8199015 C465.602981,24.4842424 467.416298,49.8365008 468.260139,61.8884583 C468.597672,67.8627207 473.391122,71.745151 473.391122,71.745151 L509.073081,98.030521 C513.618392,101.158384 513.161596,107.260178 505.636039,108.219508 C499.243068,108.754839 473.990621,110.702194 462.240738,111.604664 C456.371711,111.814291 453.150791,116.181522 453.150791,116.181522 L425.972219,153.244847 C422.426384,157.736771 416.78191,156.639851 416.303344,150.65686 L416.303344,150.65686 L416.303344,150.65686 Z" id="path-4"></path>
+        <filter x="-48.6%" y="-34.7%" width="197.2%" height="197.2%" filterUnits="objectBoundingBox" id="filter-5">
+            <feOffset dx="0" dy="20" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="20" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.11372549   0 0 0 0 0.223529412   0 0 0 0 0.345098039  0 0 0 1 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="clearnight">
+            <g id="Moon" fill-rule="nonzero">
+                <use fill="black" fill-opacity="1" filter="url(#filter-3)" xlink:href="#path-2"></use>
+                <use fill="url(#linearGradient-1)" fill-rule="evenodd" xlink:href="#path-2"></use>
+            </g>
+            <g id="Star">
+                <use fill="black" fill-opacity="1" filter="url(#filter-5)" xlink:href="#path-4"></use>
+                <use fill="#FFFE94" fill-rule="evenodd" xlink:href="#path-4"></use>
+            </g>
+            <g id="notification" transform="translate(383.000000, 248.000000)">
+                <ellipse id="bg" fill="#FFFFFF" cx="30" cy="30.5" rx="30" ry="30.5"></ellipse>
+                <polygon id="F" fill="#000000" points="30.5019531 41 26.3320312 41 26.3320312 21.0117188 37.7890625 21.0117188 37.7890625 24.484375 30.5019531 24.484375 30.5019531 29.6386719 37.2832031 29.6386719 37.2832031 33.0976562 30.5019531 33.0976562"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>

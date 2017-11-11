@@ -50,6 +50,7 @@ export default class SettingsPage extends React.Component {
         </label>
         <TextInput
           id="locationInput"
+          placeholder="Leave blank to use current location"
           value={this.settingsStore.settingsObject.locationInput}
           handleOnChange={this.handleOnChange} />
       </div>

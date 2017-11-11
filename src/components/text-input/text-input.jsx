@@ -9,7 +9,12 @@ export default class TextInput extends React.Component {
     id: PropTypes.string.isRequired,
     value: PropTypes.string.isRequired,
     handleOnChange: PropTypes.func.isRequired,
+    placeholder: PropTypes.string,
     className: PropTypes.string
+  }
+
+  static defaultProps = {
+    placeholder: ''
   }
 
   handleOnChange = (e) => {
