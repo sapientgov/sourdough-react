@@ -53,7 +53,7 @@ module.exports = {
 		publicPath: '/',
 		proxy: {
 			'/api': {
-				target: 'https://abed-localcontrol.sapientfirst.net',
+				target: 'https://34.235.79.153',
 				secure: false
 			}
 		}
@@ -141,7 +141,7 @@ module.exports = {
 			filename: 'css/styles.[contenthash].css',
 			disable: process.env.npm_lifecycle_event === 'start'
 		}),
-		
+
 		new HtmlWebpackPlugin({
 			template: './index.dev.ejs',
 			hash: false

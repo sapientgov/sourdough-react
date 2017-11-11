@@ -5,6 +5,7 @@ import {Link} from 'react-router-dom';
 
 import {cookieService} from '../core/services/cookie.service';
 import TextInput from '../components/text-input/text-input';
+import HeaderBlock from '../components/header/header';
 
 @inject('store')
 @observer
@@ -60,6 +61,8 @@ export default class SettingsPage extends React.Component {
 
   render() {
     return(
+      <div>
+      <HeaderBlock />
       <div className="container">
         <h1>Settings</h1>
         {this.renderLocationInput()}
@@ -68,6 +71,7 @@ export default class SettingsPage extends React.Component {
         <div><Link to="/">Home</Link></div>
         <div><Link to="/alarm" onClick={this.saveSettings}>Done</Link></div>
       </div>
+    </div>
     )
   }
 

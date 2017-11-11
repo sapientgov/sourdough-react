@@ -277,10 +277,12 @@ a.bottomLink {
     background-color: #fff;
 
     .clothingMsg {
+      width: 94%;
+      margin-left: auto;
+      margin-right:auto;
       margin-top: 15px;
       font-weight: $font-weight-light;
-      font-size: 1.8rem;
-      text-transform: uppercase;
+      font-size: 1.4rem;
     }
 
     h1 {

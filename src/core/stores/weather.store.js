@@ -48,6 +48,31 @@ class WeatherStore {
     }
   }
 
+  @action fetchClothingPhraseByLocation() {
+    console.log('hmmm');
+    this.isLoading = true;
+    if (navigator.geolocation) {
+      return navigator.geolocation.getCurrentPosition((position) => {
+        const success = (res) => {
+          this.isLoading = false;
+          this.clothingPhrase = res.data;
+          return res.data;
+        }
+
+        const fail = (res) => {
+          console.log('FAIL!!', res);
+        }
+
+        const latitude = position.coords.latitude;
+        const longitude = position.coords.longitude;
+
+        return apiService.getClothingPhraseByLocation(latitude, longitude).then(success, fail);
+      });
+    } else {
+      console.warn('Geolocation is not supported by this browser.');
+    }
+  }
+
   @action updateUserWeather(user) {
     if (user.settings && user.settings.locationInput) {
       this.fetchCurrentWeatherByString(user.settings.locationInput);
@@ -77,6 +102,7 @@ class WeatherStore {
   @observable displayLocation = '';
   @observable tempHi = '';
   @observable tempLo = '';
+  @observable clothingPhrase = 'Sleeves';
   @observable isLoading = true;
 }
 

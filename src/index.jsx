@@ -6,8 +6,6 @@ import {AppContainer, module, render} from 'react-hot-loader';
 import {Provider, observer} from 'mobx-react';
 import {masterStore} from './core/stores/master.store.js';
 
-import HeaderBlock from './components/header/header';
-
 import ErrorPage from './pages/error-page';
 import HomePage from './pages/home-page';
 import WelcomePage from './pages/welcome-page';
@@ -41,7 +39,6 @@ class App extends React.Component {
           <div className={`wrapper code-${masterStore.weatherStore.iconCode}`}>
             <div className="gradient" />
           <main id="main-content">
-            <HeaderBlock showClose={false} />
             <Switch>
               <Route exact path="/" component={this.getLandingPage()} />
               <Route path="/settings" component={SettingsPage} />

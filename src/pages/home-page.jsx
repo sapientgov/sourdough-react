@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {observer, inject} from 'mobx-react';
 
+import HeaderBlock from '../components/header/header';
+
 @inject('store')
 @observer
 export default class HomePage extends React.Component {
@@ -25,6 +27,7 @@ export default class HomePage extends React.Component {
     // } else {
     //   this.weatherStore.fetchCurrentWeatherByGeolocation();
     // }
+    this.weatherStore.fetchClothingPhraseByLocation();
   }
 
   componentWillUnmount() {
@@ -52,15 +55,18 @@ export default class HomePage extends React.Component {
 
   renderMainElements = () => {
     return (
+      <div>
+      <HeaderBlock />
       <div className="returningVisitorCard">
         <div className="avatar" aria-hidden="true"></div>
         <div className="bottomCard">
-          <div className="clothingMsg">Sleeves</div>
+          <div className="clothingMsg">{this.weatherStore.clothingPhrase}</div>
           <h1>{this.weatherStore.displayTemp}<span className="degIcon">&deg;</span></h1>
           <h2>{this.weatherStore.displayLocation}</h2>
           <div className="hiLow">H {this.weatherStore.tempHi}&deg; &nbsp; L {this.weatherStore.tempLo}&deg;</div>
         </div>
       </div>
+    </div>
     )
   }
 

@@ -4,6 +4,7 @@ import {observer, inject} from 'mobx-react';
 import {Link} from 'react-router-dom';
 
 import WeatherIconBlock from '../components/weather-icon-block/weather-icon-block';
+import HeaderBlock from '../components/header/header';
 
 @inject('store')
 @observer
@@ -29,7 +30,7 @@ export default class WelcomePage extends React.Component {
 
   renderIsLoading = () => {
     return (
-      <h1>Loading Welcome Page...</h1>
+      <h1 className="loadingMsg">Loading Welcome Page...</h1>
     )
   }
 
@@ -48,6 +49,8 @@ export default class WelcomePage extends React.Component {
 
   renderMainElements = () => {
     return (
+      <div>
+        <HeaderBlock />
       <div className="welcomeCard">
         {this.renderWelcomeMsg()}
         <WeatherIconBlock
@@ -55,6 +58,7 @@ export default class WelcomePage extends React.Component {
           location={this.weatherStore.displayLocation} />
         <div><Link to="/settings" className="bottomLink">Get Started</Link></div>
       </div>
+    </div>
     )
   }
 

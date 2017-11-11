@@ -14,6 +14,10 @@ class ApiService {
     return axios.get(`${openWeatherBase}?q=${string}&units=imperial&APPID=${key}`);
   }
 
+  getClothingPhraseByLocation(latitude, longitude) {
+    return axios.get(`/api/weather?lat=${latitude}&lon=${longitude}`);
+  }
+  
   sendServiceWorkerSubscriptionData(data) {
     return axios({
       method: 'post',
