@@ -14,12 +14,20 @@ export default class HomePage extends React.Component {
 
   constructor(props) {
     super(props);
+    this.userStore = this.props.store.userStore;
     this.weatherStore = this.props.store.weatherStore;
   }
 
   componentWillMount() {
-    this.weatherStore.fetchCurrentWeatherByGeolocation()
-    console.log('weather: ', this.weatherStore.currentWeather);
+    this.userStore.checkUser();
+  }
+
+  componentDidMount() {
+    if (this.userStore.currentUser.settings.locationInput) {
+      this.weatherStore.fetchCurrentWeatherByString(this.userStore.currentUser.settings.locationInput);
+    } else {
+      this.weatherStore.fetchCurrentWeatherByGeolocation()
+    }
   }
 
   componentWillUnmount() {
@@ -28,7 +36,7 @@ export default class HomePage extends React.Component {
 
   renderIsLoading = () => {
     return (
-      <h1>Loading...</h1>
+      <h1>Loading Home Page...</h1>
     )
   }
 
