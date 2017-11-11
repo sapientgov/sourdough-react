@@ -24,7 +24,7 @@ export default class SettingsPage extends React.Component {
     this.userStore.checkUser();
     if (this.userStore.isReturningUser) {
       const cookie = JSON.parse(cookieService.getCookie('_brella'));
-      this.settingsStore.populateFormFields(cookie.settings);
+      this.settingsStore.populateFields(cookie.settings);
     }
   }
 
@@ -66,7 +66,7 @@ export default class SettingsPage extends React.Component {
         <h2>Avatar</h2>
         <h2>Sliders</h2>
         <div><Link to="/">Home</Link></div>
-        <div><Link to="/" onClick={this.saveSettings}>Done</Link></div>
+        <div><Link to="/alarm" onClick={this.saveSettings}>Done</Link></div>
       </div>
     )
   }
