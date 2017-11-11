@@ -9,7 +9,12 @@ export default class TextInput extends React.Component {
   static propTypes = {
     id: PropTypes.string.isRequired,
     value: PropTypes.string.isRequired,
-    handleOnChange: PropTypes.func.isRequired
+    handleOnChange: PropTypes.func.isRequired,
+    placeholder: PropTypes.string
+  }
+
+  static defaultProps = {
+    placeholder: ''
   }
 
   handleOnChange = (e) => {
@@ -19,7 +24,7 @@ export default class TextInput extends React.Component {
 
   render() {
     return (
-      <input id={this.props.id} type="text" value={this.props.value} onChange={this.handleOnChange}/>
+      <input id={this.props.id} type="text" value={this.props.value} placeholder={this.props.placeholder} onChange={this.handleOnChange}/>
     )
   }
 
