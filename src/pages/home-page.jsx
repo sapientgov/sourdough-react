@@ -23,11 +23,11 @@ export default class HomePage extends React.Component {
   }
 
   componentDidMount() {
-    if (this.userStore.currentUser.settings.locationInput) {
-      this.weatherStore.fetchCurrentWeatherByString(this.userStore.currentUser.settings.locationInput);
-    } else {
-      this.weatherStore.fetchCurrentWeatherByGeolocation()
-    }
+    // if (this.userStore.currentUser.settings.locationInput) {
+    //   this.weatherStore.fetchCurrentWeatherByString(this.userStore.currentUser.settings.locationInput);
+    // } else {
+    //   this.weatherStore.fetchCurrentWeatherByGeolocation();
+    // }
   }
 
   componentWillUnmount() {
@@ -54,6 +54,7 @@ export default class HomePage extends React.Component {
   }
 
   renderMainElements = () => {
+    console.log('WHHHYYYYYY', this.weatherStore.displayTemp);
     return (
       <div className="welcomeCard">
         {this.renderWelcomeMsg()}
