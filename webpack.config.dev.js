@@ -1,5 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
@@ -129,6 +130,10 @@ module.exports = {
 		]
 	},
 	plugins: [
+		new CopyWebpackPlugin([{
+			from: 'service-worker.js',
+			to: 'js/service-worker.js'
+		}]),
 		new webpack.IgnorePlugin(/regenerator|nodent|js-beautify/, /ajv/),
 		new webpack.HotModuleReplacementPlugin(),
 
